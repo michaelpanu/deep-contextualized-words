@@ -16,20 +16,24 @@ LR = 1e-3
 class Tagger(nn.Module):
     """Sec 3.3 Pipeline B: task biLSTM + output layer, optionally fed [x_k ; ELMo_k]."""
 
-    def __init__(self, num_tags, use_elmo):
+    def __init__(self, num_tags, use_elmo, output_elmo=False):
         super().__init__()
-        self.use_elmo = use_elmo
-        self.mix = ScalarMix(3) if use_elmo else None
+        self.in_mix = ScalarMix(3) if use_elmo else None
+        self.out_mix = ScalarMix(3) if output_elmo else None  # own s/gamma, learned separately
         in_dim = REP_DIM * 2 if use_elmo else REP_DIM
+        out_dim = TASK_HIDDEN * 2 + (REP_DIM if output_elmo else 0)
         self.rnn = nn.LSTM(in_dim, TASK_HIDDEN, batch_first=True, bidirectional=True)
-        self.out = nn.Linear(TASK_HIDDEN * 2, num_tags)
+        self.out = nn.Linear(out_dim, num_tags)
 
     def forward(self, layers):
         x = layers[0]  # x_k: the context-independent token layer
-        if self.use_elmo:
-            x = torch.cat([x, self.mix(layers)], dim=-1)
+        if self.in_mix is not None:
+            x = torch.cat([x, self.in_mix(layers)], dim=-1)
         hidden, _ = self.rnn(x.unsqueeze(0))
-        return self.out(hidden.squeeze(0))
+        h = hidden.squeeze(0)
+        if self.out_mix is not None:
+            h = torch.cat([h, self.out_mix(layers)], dim=-1)
+        return self.out(h)
 
 
 class LinearProbe(nn.Module):
@@ -111,18 +115,21 @@ if __name__ == '__main__':
     print(f"Cached frozen biLM features: "
           f"{', '.join(f'{k} {len(v[0])} sents' for k, v in splits.items())}\n")
 
-    results = {}
-    for use_elmo in [False, True]:
-        name = 'static + ELMo' if use_elmo else 'static only'
+    configs = [
+        ('static only', False, False),
+        ('ELMo at input', True, False),
+        ('ELMo at input+output', True, True),
+    ]
+    results, mixes = {}, {}
+    for name, use_elmo, output_elmo in configs:
         torch.manual_seed(0)
-        tagger = Tagger(len(tags), use_elmo)
+        tagger = Tagger(len(tags), use_elmo, output_elmo)
         print(f"Training tagger ({name}):")
         train_task_model(tagger, *splits['train'], *splits['val'], name)
         results[name] = accuracy(tagger, *splits['test'])
-        if use_elmo:
-            weights = torch.softmax(tagger.mix.s, dim=0).tolist()
-            results['learned_s'] = weights
-            results['learned_gamma'] = tagger.mix.gamma.item()
+        for slot, mix in [('input', tagger.in_mix), ('output', tagger.out_mix)]:
+            if mix is not None:
+                mixes[(name, slot)] = (torch.softmax(mix.s, dim=0).tolist(), mix.gamma.item())
         print()
 
     print("Probing each frozen layer with a linear classifier (Sec 5.3 style):")
@@ -136,13 +143,13 @@ if __name__ == '__main__':
 
     print("=" * 58)
     print("POS tagging test accuracy")
-    for name in ['static only', 'static + ELMo']:
-        print(f"  {name:<16} {results[name]:.4f}")
-    delta = results['static + ELMo'] - results['static only']
-    print(f"  {'delta':<16} {delta:+.4f}")
-    print(f"\nLearned ELMo weights: s = "
-          f"{[round(w, 3) for w in results['learned_s']]}, "
-          f"gamma = {results['learned_gamma']:.3f}")
+    for name, _, _ in configs:
+        delta = results[name] - results['static only']
+        print(f"  {name:<22} {results[name]:.4f}  ({delta:+.4f})")
+
+    print("\nLearned Eq. (1) weights per injection point:")
+    for (name, slot), (s, gamma) in mixes.items():
+        print(f"  {name:<22} {slot:<7} s = {[round(w, 3) for w in s]}  gamma = {gamma:.3f}")
     print("\nLinear probe test accuracy per frozen layer:")
     for label, acc in probe_acc.items():
         print(f"  {label:<22} {acc:.4f}")

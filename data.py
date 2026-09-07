@@ -5,6 +5,15 @@ import nltk
 from nltk.corpus import gutenberg
 
 
+CORPUS_FILES = [
+    'carroll-alice.txt',
+    'burgess-busterbrown.txt',
+    'bryant-stories.txt',
+    'austen-persuasion.txt',
+    'chesterton-brown.txt',
+]
+
+
 def _ensure_nltk_data():
     for resource, path in [('gutenberg', 'corpora/gutenberg'),
                             ('punkt', 'tokenizers/punkt'),
@@ -20,7 +29,7 @@ def load_data(seed=42, val_frac=0.2, test_frac=0.1):
 
     random.seed(seed)
 
-    raw_text = gutenberg.raw('carroll-alice.txt') + " " + gutenberg.raw('burgess-busterbrown.txt')
+    raw_text = " ".join(gutenberg.raw(f) for f in CORPUS_FILES)
     sentences = nltk.sent_tokenize(raw_text)
     tokenized_sentences = [nltk.word_tokenize(sent) for sent in sentences]
     tokenized_sentences = [s for s in tokenized_sentences if len(s) >= 2]

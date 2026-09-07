@@ -1,0 +1,13 @@
+No-leakage check passed on a 6-word sentence (both directions).
+resumed from bilm.pt (val ppl 178.3) at lr 0.0002
+epoch  1 | train loss 9.417 | val ppl fwd   178.2 bwd   177.1 | 142s <- saved
+epoch  2 | train loss 9.329 | val ppl fwd   172.9 bwd   172.7 | 141s <- saved
+epoch  3 | train loss 9.277 | val ppl fwd   172.2 bwd   171.7 | 142s <- saved
+epoch  4 | train loss 9.241 | val ppl fwd   171.1 bwd   171.7 | 141s <- saved
+epoch  5 | train loss 9.201 | val ppl fwd   170.1 bwd   171.0 | 141s <- saved
+epoch  6 | train loss 9.165 | val ppl fwd   170.6 bwd   171.2 | 141s
+epoch  7 | train loss 9.137 | val ppl fwd   171.0 bwd   171.7 | 142s
+epoch  8 | train loss 9.102 | val ppl fwd   170.7 bwd   171.4 | 141s
+epoch  9 | train loss 9.063 | val ppl fwd   171.4 bwd   172.2 | 147s
+epoch 10 | train loss 9.028 | val ppl fwd   172.1 bwd   173.7 | 148s
+best val perplexity 170.5 (bilm.pt)

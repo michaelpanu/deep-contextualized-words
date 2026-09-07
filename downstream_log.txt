@@ -1,62 +1,75 @@
-Cached frozen biLM features: train 1839 sents, val 525 sents, test 262 sents
+Cached frozen biLM features: train 8895 sents, val 2541 sents, test 1270 sents
 
 Training tagger (static only):
-  static only epoch 1: val acc 0.8968
-  static only epoch 2: val acc 0.9042
-  static only epoch 3: val acc 0.9245
-  static only epoch 4: val acc 0.9244
-  static only epoch 5: val acc 0.9336
-  static only epoch 6: val acc 0.9319
-  static only epoch 7: val acc 0.9322
-  static only epoch 8: val acc 0.9359
+  static only epoch 1: val acc 0.9541
+  static only epoch 2: val acc 0.9590
+  static only epoch 3: val acc 0.9628
+  static only epoch 4: val acc 0.9628
+  static only epoch 5: val acc 0.9647
+  static only epoch 6: val acc 0.9647
+  static only epoch 7: val acc 0.9651
+  static only epoch 8: val acc 0.9656
 
-Training tagger (static + ELMo):
-  static + ELMo epoch 1: val acc 0.9043
-  static + ELMo epoch 2: val acc 0.9168
-  static + ELMo epoch 3: val acc 0.9093
-  static + ELMo epoch 4: val acc 0.9216
-  static + ELMo epoch 5: val acc 0.9256
-  static + ELMo epoch 6: val acc 0.9218
-  static + ELMo epoch 7: val acc 0.9277
-  static + ELMo epoch 8: val acc 0.9365
+Training tagger (ELMo at input):
+  ELMo at input epoch 1: val acc 0.9557
+  ELMo at input epoch 2: val acc 0.9549
+  ELMo at input epoch 3: val acc 0.9612
+  ELMo at input epoch 4: val acc 0.9635
+  ELMo at input epoch 5: val acc 0.9651
+  ELMo at input epoch 6: val acc 0.9645
+  ELMo at input epoch 7: val acc 0.9646
+  ELMo at input epoch 8: val acc 0.9653
+
+Training tagger (ELMo at input+output):
+  ELMo at input+output epoch 1: val acc 0.9559
+  ELMo at input+output epoch 2: val acc 0.9605
+  ELMo at input+output epoch 3: val acc 0.9639
+  ELMo at input+output epoch 4: val acc 0.9646
+  ELMo at input+output epoch 5: val acc 0.9634
+  ELMo at input+output epoch 6: val acc 0.9652
+  ELMo at input+output epoch 7: val acc 0.9654
+  ELMo at input+output epoch 8: val acc 0.9656
 
 Probing each frozen layer with a linear classifier (Sec 5.3 style):
-  h_0 (char-CNN) epoch 1: val acc 0.8144
-  h_0 (char-CNN) epoch 2: val acc 0.8369
-  h_0 (char-CNN) epoch 3: val acc 0.8482
-  h_0 (char-CNN) epoch 4: val acc 0.8486
-  h_0 (char-CNN) epoch 5: val acc 0.8495
-  h_0 (char-CNN) epoch 6: val acc 0.8451
-  h_0 (char-CNN) epoch 7: val acc 0.8474
-  h_0 (char-CNN) epoch 8: val acc 0.8359
+  h_0 (char-CNN) epoch 1: val acc 0.8784
+  h_0 (char-CNN) epoch 2: val acc 0.8792
+  h_0 (char-CNN) epoch 3: val acc 0.8829
+  h_0 (char-CNN) epoch 4: val acc 0.8816
+  h_0 (char-CNN) epoch 5: val acc 0.8803
+  h_0 (char-CNN) epoch 6: val acc 0.8761
+  h_0 (char-CNN) epoch 7: val acc 0.8814
+  h_0 (char-CNN) epoch 8: val acc 0.8832
 
-  h_1 (biLSTM layer 1) epoch 1: val acc 0.8332
-  h_1 (biLSTM layer 1) epoch 2: val acc 0.8481
-  h_1 (biLSTM layer 1) epoch 3: val acc 0.8588
-  h_1 (biLSTM layer 1) epoch 4: val acc 0.8651
-  h_1 (biLSTM layer 1) epoch 5: val acc 0.8701
-  h_1 (biLSTM layer 1) epoch 6: val acc 0.8709
-  h_1 (biLSTM layer 1) epoch 7: val acc 0.8751
-  h_1 (biLSTM layer 1) epoch 8: val acc 0.8770
+  h_1 (biLSTM layer 1) epoch 1: val acc 0.9231
+  h_1 (biLSTM layer 1) epoch 2: val acc 0.9276
+  h_1 (biLSTM layer 1) epoch 3: val acc 0.9293
+  h_1 (biLSTM layer 1) epoch 4: val acc 0.9297
+  h_1 (biLSTM layer 1) epoch 5: val acc 0.9304
+  h_1 (biLSTM layer 1) epoch 6: val acc 0.9317
+  h_1 (biLSTM layer 1) epoch 7: val acc 0.9320
+  h_1 (biLSTM layer 1) epoch 8: val acc 0.9323
 
-  h_2 (biLSTM layer 2) epoch 1: val acc 0.8418
-  h_2 (biLSTM layer 2) epoch 2: val acc 0.8554
-  h_2 (biLSTM layer 2) epoch 3: val acc 0.8630
-  h_2 (biLSTM layer 2) epoch 4: val acc 0.8704
-  h_2 (biLSTM layer 2) epoch 5: val acc 0.8697
-  h_2 (biLSTM layer 2) epoch 6: val acc 0.8734
-  h_2 (biLSTM layer 2) epoch 7: val acc 0.8769
-  h_2 (biLSTM layer 2) epoch 8: val acc 0.8801
+  h_2 (biLSTM layer 2) epoch 1: val acc 0.9295
+  h_2 (biLSTM layer 2) epoch 2: val acc 0.9320
+  h_2 (biLSTM layer 2) epoch 3: val acc 0.9329
+  h_2 (biLSTM layer 2) epoch 4: val acc 0.9343
+  h_2 (biLSTM layer 2) epoch 5: val acc 0.9358
+  h_2 (biLSTM layer 2) epoch 6: val acc 0.9347
+  h_2 (biLSTM layer 2) epoch 7: val acc 0.9350
+  h_2 (biLSTM layer 2) epoch 8: val acc 0.9360
 
 ==========================================================
 POS tagging test accuracy
-  static only      0.9306
-  static + ELMo    0.9359
-  delta            +0.0053
+  static only            0.9658  (+0.0000)
+  ELMo at input          0.9669  (+0.0011)
+  ELMo at input+output   0.9652  (-0.0006)
 
-Learned ELMo weights: s = [0.162, 0.174, 0.665], gamma = 2.280
+Learned Eq. (1) weights per injection point:
+  ELMo at input          input   s = [0.081, 0.547, 0.372]  gamma = 2.238
+  ELMo at input+output   input   s = [0.083, 0.584, 0.333]  gamma = 2.056
+  ELMo at input+output   output  s = [0.141, 0.435, 0.424]  gamma = 0.526
 
 Linear probe test accuracy per frozen layer:
-  h_0 (char-CNN)         0.8451
-  h_1 (biLSTM layer 1)   0.8772
-  h_2 (biLSTM layer 2)   0.8798
+  h_0 (char-CNN)         0.8826
+  h_1 (biLSTM layer 1)   0.9322
+  h_2 (biLSTM layer 2)   0.9334

@@ -62,6 +62,8 @@ def check_no_leakage(model, sent, char2idx):
 
 if __name__ == '__main__':
     epochs = int(sys.argv[1]) if len(sys.argv) > 1 else 10
+    resume = '--resume' in sys.argv
+    lr = LR / 5 if resume else LR
     torch.manual_seed(0)
     random.seed(0)
 
@@ -70,12 +72,18 @@ if __name__ == '__main__':
     word2idx, char2idx = data['word2idx'], data['char2idx']
 
     model = BiLM(len(char2idx), len(word2idx))
-    optimizer = torch.optim.Adam(model.parameters(), lr=LR)
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     criterion = nn.CrossEntropyLoss()
 
     check_no_leakage(model, train_sents[0], char2idx)
 
     best_ppl = float('inf')
+    if resume:
+        model.load_state_dict(torch.load('bilm.pt'))
+        # start from the loaded model's score, so a worse epoch cannot clobber it
+        f, b = perplexities(model, val_sents, word2idx, char2idx, criterion)
+        best_ppl = (f + b) / 2
+        print(f"resumed from bilm.pt (val ppl {best_ppl:.1f}) at lr {lr}")
     for epoch in range(1, epochs + 1):
         random.shuffle(train_sents)
         start = time.time()

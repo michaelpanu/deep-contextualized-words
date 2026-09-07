@@ -1,22 +1,14 @@
-No-leakage check passed on a 5-word sentence (both directions).
-epoch  1 | train loss 11.113 | val ppl fwd   167.1 bwd   178.8 | 27s <- saved
-epoch  2 | train loss 9.737 | val ppl fwd   127.1 bwd   133.6 | 26s <- saved
-epoch  3 | train loss 9.038 | val ppl fwd   109.7 bwd   113.9 | 26s <- saved
-epoch  4 | train loss 8.552 | val ppl fwd   105.3 bwd   108.8 | 26s <- saved
-epoch  5 | train loss 8.148 | val ppl fwd   104.9 bwd   109.2 | 25s
-epoch  6 | train loss 7.796 | val ppl fwd   105.4 bwd   111.5 | 26s
-epoch  7 | train loss 7.489 | val ppl fwd   104.5 bwd   112.3 | 25s
-epoch  8 | train loss 7.195 | val ppl fwd   109.3 bwd   115.2 | 25s
-epoch  9 | train loss 6.929 | val ppl fwd   118.3 bwd   119.7 | 27s
-epoch 10 | train loss 6.678 | val ppl fwd   123.1 bwd   132.6 | 25s
-epoch 11 | train loss 6.441 | val ppl fwd   126.6 bwd   133.4 | 27s
-epoch 12 | train loss 6.221 | val ppl fwd   134.2 bwd   142.4 | 29s
-epoch 13 | train loss 6.010 | val ppl fwd   141.5 bwd   146.8 | 25s
-epoch 14 | train loss 5.806 | val ppl fwd   146.2 bwd   155.9 | 26s
-epoch 15 | train loss 5.602 | val ppl fwd   156.5 bwd   161.0 | 27s
-epoch 16 | train loss 5.426 | val ppl fwd   163.0 bwd   173.9 | 27s
-epoch 17 | train loss 5.241 | val ppl fwd   169.2 bwd   175.1 | 28s
-epoch 18 | train loss 5.067 | val ppl fwd   179.2 bwd   192.2 | 30s
-epoch 19 | train loss 4.917 | val ppl fwd   185.8 bwd   195.3 | 26s
-epoch 20 | train loss 4.764 | val ppl fwd   196.3 bwd   206.0 | 25s
-best val perplexity 107.0 (bilm.pt)
+No-leakage check passed on a 6-word sentence (both directions).
+epoch  1 | train loss 11.532 | val ppl fwd   224.5 bwd   225.9 | 150s <- saved
+epoch  2 | train loss 10.465 | val ppl fwd   201.9 bwd   203.4 | 146s <- saved
+epoch  3 | train loss 10.143 | val ppl fwd   193.3 bwd   198.8 | 144s <- saved
+epoch  4 | train loss 9.953 | val ppl fwd   187.2 bwd   190.5 | 144s <- saved
+epoch  5 | train loss 9.819 | val ppl fwd   183.4 bwd   187.0 | 145s <- saved
+epoch  6 | train loss 9.716 | val ppl fwd   182.0 bwd   183.8 | 146s <- saved
+epoch  7 | train loss 9.642 | val ppl fwd   180.7 bwd   181.6 | 147s <- saved
+epoch  8 | train loss 9.572 | val ppl fwd   179.7 bwd   179.6 | 145s <- saved
+epoch  9 | train loss 9.518 | val ppl fwd   179.0 bwd   178.6 | 150s <- saved
+epoch 10 | train loss 9.472 | val ppl fwd   176.8 bwd   179.9 | 149s <- saved
+epoch 11 | train loss 9.433 | val ppl fwd   180.2 bwd   180.2 | 145s
+epoch 12 | train loss 9.401 | val ppl fwd   180.0 bwd   180.7 | 144s
+best val perplexity 178.3 (bilm.pt)

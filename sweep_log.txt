@@ -1,0 +1,20 @@
+caching frozen biLM features...
+frac 0.01  (   88 sents) seed 0 static only            test acc 0.9004
+frac 0.01  (   88 sents) seed 0 ELMo at input          test acc 0.9141
+frac 0.01  (   88 sents) seed 0 ELMo at input+output   test acc 0.9163
+frac 0.01  (   88 sents) seed 1 static only            test acc 0.9028
+frac 0.01  (   88 sents) seed 1 ELMo at input          test acc 0.9186
+frac 0.01  (   88 sents) seed 1 ELMo at input+output   test acc 0.9173
+frac 0.01  (   88 sents) seed 2 static only            test acc 0.9040
+frac 0.01  (   88 sents) seed 2 ELMo at input          test acc 0.9181
+frac 0.01  (   88 sents) seed 2 ELMo at input+output   test acc 0.9178
+frac 0.05  (  444 sents) seed 0 static only            test acc 0.9395
+frac 0.05  (  444 sents) seed 0 ELMo at input          test acc 0.9458
+frac 0.05  (  444 sents) seed 0 ELMo at input+output   test acc 0.9457
+frac 0.05  (  444 sents) seed 1 static only            test acc 0.9409
+frac 0.05  (  444 sents) seed 1 ELMo at input          test acc 0.9443
+frac 0.05  (  444 sents) seed 1 ELMo at input+output   test acc 0.9434
+frac 0.05  (  444 sents) seed 2 static only            test acc 0.9381
+frac 0.05  (  444 sents) seed 2 ELMo at input          test acc 0.9440
+frac 0.05  (  444 sents) seed 2 ELMo at input+output   test acc 0.9429
+frac 0.25  ( 2223 sents) seed 0 static only            test acc 0.9556

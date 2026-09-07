@@ -5,6 +5,7 @@ from char_cnn import CharCNN, CHAR_CNN_DIM
 
 HIDDEN_DIM = 128
 NUM_LAYERS = 2
+DROPOUT = 0.3
 
 
 class BiLM(nn.Module):
@@ -20,16 +21,17 @@ class BiLM(nn.Module):
             [nn.LSTM(CHAR_CNN_DIM if i == 0 else HIDDEN_DIM, HIDDEN_DIM, batch_first=True)
              for i in range(NUM_LAYERS)])
         self.softmax = nn.Linear(HIDDEN_DIM, word_vocab_size)
+        self.dropout = nn.Dropout(DROPOUT)
 
     def _run_stack(self, token_vecs, lstms):
-        h = token_vecs.unsqueeze(0)
+        h = self.dropout(token_vecs).unsqueeze(0)
         outputs = []
         for i, lstm in enumerate(lstms):
             out, _ = lstm(h)
             if i > 0:
                 out = out + h  # residual from layer 1 into layer 2
             outputs.append(out.squeeze(0))
-            h = out
+            h = self.dropout(out)
         return outputs
 
     def forward(self, char_ids):
