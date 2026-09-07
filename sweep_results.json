@@ -250,5 +250,257 @@
       0.4859520196914673
     ],
     "gamma_output": 1.4971039295196533
+  },
+  {
+    "fraction": 0.25,
+    "sentences": 2223,
+    "seed": 0,
+    "config": "static only",
+    "epochs": 24,
+    "test_acc": 0.9556018155137699
+  },
+  {
+    "fraction": 0.25,
+    "sentences": 2223,
+    "seed": 0,
+    "config": "ELMo at input",
+    "epochs": 24,
+    "test_acc": 0.9559430775005973,
+    "s_input": [
+      0.1166965439915657,
+      0.3349320888519287,
+      0.548371434211731
+    ],
+    "gamma_input": 2.067626714706421
+  },
+  {
+    "fraction": 0.25,
+    "sentences": 2223,
+    "seed": 0,
+    "config": "ELMo at input+output",
+    "epochs": 24,
+    "test_acc": 0.9556359417124527,
+    "s_input": [
+      0.10565288364887238,
+      0.41266316175460815,
+      0.4816839098930359
+    ],
+    "gamma_input": 2.0542514324188232,
+    "s_output": [
+      0.1416158229112625,
+      0.3746333718299866,
+      0.48375076055526733
+    ],
+    "gamma_output": 0.9091651439666748
+  },
+  {
+    "fraction": 0.25,
+    "sentences": 2223,
+    "seed": 1,
+    "config": "static only",
+    "epochs": 24,
+    "test_acc": 0.9562843394874245
+  },
+  {
+    "fraction": 0.25,
+    "sentences": 2223,
+    "seed": 1,
+    "config": "ELMo at input",
+    "epochs": 24,
+    "test_acc": 0.9564208442821555,
+    "s_input": [
+      0.1122257262468338,
+      0.33079400658607483,
+      0.5569802522659302
+    ],
+    "gamma_input": 2.117849111557007
+  },
+  {
+    "fraction": 0.25,
+    "sentences": 2223,
+    "seed": 1,
+    "config": "ELMo at input+output",
+    "epochs": 24,
+    "test_acc": 0.9547486605467017,
+    "s_input": [
+      0.11289390921592712,
+      0.38911864161491394,
+      0.4979874789714813
+    ],
+    "gamma_input": 2.0760982036590576,
+    "s_output": [
+      0.14180901646614075,
+      0.3793148398399353,
+      0.4788760542869568
+    ],
+    "gamma_output": 0.9135940670967102
+  },
+  {
+    "fraction": 0.25,
+    "sentences": 2223,
+    "seed": 2,
+    "config": "static only",
+    "epochs": 24,
+    "test_acc": 0.9558065727058663
+  },
+  {
+    "fraction": 0.25,
+    "sentences": 2223,
+    "seed": 2,
+    "config": "ELMo at input",
+    "epochs": 24,
+    "test_acc": 0.9554311845203562,
+    "s_input": [
+      0.10044606029987335,
+      0.3782278895378113,
+      0.5213260054588318
+    ],
+    "gamma_input": 2.177967071533203
+  },
+  {
+    "fraction": 0.25,
+    "sentences": 2223,
+    "seed": 2,
+    "config": "ELMo at input+output",
+    "epochs": 24,
+    "test_acc": 0.9580589018189264,
+    "s_input": [
+      0.11160703748464584,
+      0.3885657489299774,
+      0.49982720613479614
+    ],
+    "gamma_input": 2.045076847076416,
+    "s_output": [
+      0.16890715062618256,
+      0.37699589133262634,
+      0.45409688353538513
+    ],
+    "gamma_output": 0.9120139479637146
+  },
+  {
+    "fraction": 1.0,
+    "sentences": 8895,
+    "seed": 0,
+    "config": "static only",
+    "epochs": 6,
+    "test_acc": 0.964781762959424
+  },
+  {
+    "fraction": 1.0,
+    "sentences": 8895,
+    "seed": 0,
+    "config": "ELMo at input",
+    "epochs": 6,
+    "test_acc": 0.9640309865884039,
+    "s_input": [
+      0.08643074333667755,
+      0.5265330672264099,
+      0.38703620433807373
+    ],
+    "gamma_input": 2.063833236694336
+  },
+  {
+    "fraction": 1.0,
+    "sentences": 8895,
+    "seed": 0,
+    "config": "ELMo at input+output",
+    "epochs": 6,
+    "test_acc": 0.9659420537146367,
+    "s_input": [
+      0.0882858857512474,
+      0.5674739480018616,
+      0.3442402184009552
+    ],
+    "gamma_input": 1.8965239524841309,
+    "s_output": [
+      0.12792803347110748,
+      0.42504236102104187,
+      0.44702962040901184
+    ],
+    "gamma_output": 0.5534290671348572
+  },
+  {
+    "fraction": 1.0,
+    "sentences": 8895,
+    "seed": 1,
+    "config": "static only",
+    "epochs": 6,
+    "test_acc": 0.9648500153567894
+  },
+  {
+    "fraction": 1.0,
+    "sentences": 8895,
+    "seed": 1,
+    "config": "ELMo at input",
+    "epochs": 6,
+    "test_acc": 0.9596628331570146,
+    "s_input": [
+      0.10276701301336288,
+      0.46848064661026,
+      0.4287523031234741
+    ],
+    "gamma_input": 1.906869649887085
+  },
+  {
+    "fraction": 1.0,
+    "sentences": 8895,
+    "seed": 1,
+    "config": "ELMo at input+output",
+    "epochs": 6,
+    "test_acc": 0.9648500153567894,
+    "s_input": [
+      0.08503159880638123,
+      0.5738409757614136,
+      0.3411273658275604
+    ],
+    "gamma_input": 1.876806616783142,
+    "s_output": [
+      0.12472862005233765,
+      0.4393678605556488,
+      0.43590348958969116
+    ],
+    "gamma_output": 0.5964364409446716
+  },
+  {
+    "fraction": 1.0,
+    "sentences": 8895,
+    "seed": 2,
+    "config": "static only",
+    "epochs": 6,
+    "test_acc": 0.9640651127870866
+  },
+  {
+    "fraction": 1.0,
+    "sentences": 8895,
+    "seed": 2,
+    "config": "ELMo at input",
+    "epochs": 6,
+    "test_acc": 0.9633484626147494,
+    "s_input": [
+      0.0930509939789772,
+      0.544522762298584,
+      0.3624262511730194
+    ],
+    "gamma_input": 2.0623867511749268
+  },
+  {
+    "fraction": 1.0,
+    "sentences": 8895,
+    "seed": 2,
+    "config": "ELMo at input+output",
+    "epochs": 6,
+    "test_acc": 0.9644405009725967,
+    "s_input": [
+      0.08070679008960724,
+      0.5901012420654297,
+      0.32919198274612427
+    ],
+    "gamma_input": 1.9253830909729004,
+    "s_output": [
+      0.1485290378332138,
+      0.43490150570869446,
+      0.4165695309638977
+    ],
+    "gamma_output": 0.5690956711769104
   }
 ]

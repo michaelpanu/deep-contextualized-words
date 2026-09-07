@@ -18,3 +18,22 @@ frac 0.05  (  444 sents) seed 2 static only            test acc 0.9381
 frac 0.05  (  444 sents) seed 2 ELMo at input          test acc 0.9440
 frac 0.05  (  444 sents) seed 2 ELMo at input+output   test acc 0.9429
 frac 0.25  ( 2223 sents) seed 0 static only            test acc 0.9556
+frac 0.25  ( 2223 sents) seed 0 ELMo at input          test acc 0.9559
+frac 0.25  ( 2223 sents) seed 0 ELMo at input+output   test acc 0.9556
+frac 0.25  ( 2223 sents) seed 1 static only            test acc 0.9563
+frac 0.25  ( 2223 sents) seed 1 ELMo at input          test acc 0.9564
+frac 0.25  ( 2223 sents) seed 1 ELMo at input+output   test acc 0.9547
+frac 0.25  ( 2223 sents) seed 2 static only            test acc 0.9558
+frac 0.25  ( 2223 sents) seed 2 ELMo at input          test acc 0.9554
+frac 0.25  ( 2223 sents) seed 2 ELMo at input+output   test acc 0.9581
+frac 1.0   ( 8895 sents) seed 0 static only            test acc 0.9648
+frac 1.0   ( 8895 sents) seed 0 ELMo at input          test acc 0.9640
+frac 1.0   ( 8895 sents) seed 0 ELMo at input+output   test acc 0.9659
+frac 1.0   ( 8895 sents) seed 1 static only            test acc 0.9649
+frac 1.0   ( 8895 sents) seed 1 ELMo at input          test acc 0.9597
+frac 1.0   ( 8895 sents) seed 1 ELMo at input+output   test acc 0.9649
+frac 1.0   ( 8895 sents) seed 2 static only            test acc 0.9641
+frac 1.0   ( 8895 sents) seed 2 ELMo at input          test acc 0.9633
+frac 1.0   ( 8895 sents) seed 2 ELMo at input+output   test acc 0.9644
+
+wrote sweep_results.json
