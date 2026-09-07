@@ -1,0 +1,11 @@
+# Python environment and bytecode -- regenerated, machine-specific
+venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Intermediate checkpoints (bilm.pt is kept, so the analysis can be rerun without retraining)
+bilm_epoch10_backup.pt
+small_corpus_run/bilm.pt
