@@ -1,0 +1,7 @@
+No-leakage check passed on a 5-word sentence (both directions).
+epoch  1 | train loss 11.113 | val ppl fwd   167.1 bwd   178.8 | 27s <- saved
+epoch  2 | train loss 9.737 | val ppl fwd   127.1 bwd   133.6 | 26s <- saved
+epoch  3 | train loss 9.038 | val ppl fwd   109.7 bwd   113.9 | 26s <- saved
+epoch  4 | train loss 8.552 | val ppl fwd   105.3 bwd   108.8 | 26s <- saved
+epoch  5 | train loss 8.148 | val ppl fwd   104.9 bwd   109.2 | 25s
+epoch  6 | train loss 7.796 | val ppl fwd   105.4 bwd   111.5 | 26s

@@ -46,7 +46,8 @@ def load_data(seed=42, val_frac=0.2, test_frac=0.1):
     for sent in tokenized_sentences:
         for word in sent:
             all_chars.update(word)
-    char_vocab = ['<bow>', '<eow>', '<unk_char>'] + sorted(all_chars)
+    # <bos>/<eos> get their own char-level symbols rather than being spelled out
+    char_vocab = ['<bow>', '<eow>', '<unk_char>', '<pad_char>', '<bos>', '<eos>'] + sorted(all_chars)
     char2idx = {c: i for i, c in enumerate(char_vocab)}
 
     return {
